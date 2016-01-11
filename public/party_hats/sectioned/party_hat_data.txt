@@ -1,0 +1,10 @@
+name=Sectioned Party Hat
+price=$39.99
+
+description:
+Classic stlye design and goes with any outfit
+END
+
+features:
+Many sections
+END

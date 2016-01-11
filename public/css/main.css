@@ -1,0 +1,150 @@
+
+body {
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  overflow: scroll;
+}
+
+div.forms {
+  font-size: 40px;
+  padding: 5px;
+  background-color: gray;
+  width: 75%;
+  text-align: center;
+  margin: auto;
+  height: 90%;
+  vertical-align: middle;
+}
+
+#hats {
+  font-size: 2em;
+  width: 90%;
+  top: 450px;
+  padding: 100px;
+  list-style-type: none;
+  margin: auto;
+}
+
+.miniFeaturedPage {
+     font-size: 2em;
+	width: 33%;
+	float: left;
+	display: inline-block;
+	padding: 5px;
+	height: 200px;
+	margin: auto;
+	text-align: center;
+     list-style-type: none;
+	box-sizing: border-box;
+}
+
+.miniFeaturedPage img {
+	background-color: white;
+	border-radius: 30px;
+}
+
+input {
+  font-size: 0.9em;
+}
+
+#banner{
+	border-style: solid;
+	background-color: #8c8c8c;
+	width: 100%;
+	margin: auto;
+	height: 500px;
+	top: 150px;
+	margin-top: 0px;
+	box-sizing: border-box;
+}
+
+
+
+#top{
+	width: 100%;
+	margin: auto;
+}
+
+#logo{
+	float: center;
+	height: 150px;
+	transform: translateY(-50px);
+}
+
+header{
+	background-color: gray;
+	height: 150px;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 0px;
+	padding-top: 50px;
+}
+
+#POST-submit{
+	cursor: pointer;
+}
+
+a:link{
+	color: black;
+}
+
+a:visited{
+	color: rgb(50,50,50);
+}
+
+a:hover{
+	color: rgb(100,100,100);
+}
+
+a:active{
+	color: rgb(50,50,50);
+}
+
+@keyframes darkenShadow {
+    0% {box-shadow: 5px 5px 20px hsl(0,100%,50%);}
+    16% {box-shadow: 5px 5px 20px hsl(60,100%,50%);}
+    33% {box-shadow: 5px 5px 20px hsl(120,100%,50%);}
+    50% {box-shadow: 5px 5px 20px hsl(180,100%,50%);}
+    66% {box-shadow: 5px 5px 20px hsl(240,100%,50%);}
+    83% {box-shadow: 5px 5px 20px hsl(300,100%,50%);}
+    100% {box-shadow: 5px 5px 20px hsl(360,100%,50%);}
+}
+
+.miniPage:hover {
+	animation-name: darkenShadow;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.miniPage{
+	width: 320px;
+	float: left;
+	padding: 10px 0px 0px 0px;
+	margin: 10px;
+	height: 500px;
+	text-align: center;
+	box-sizing: border-box;
+	background-color: rgb(240,240,240);
+	border-radius: 35px;
+	box-shadow: 5px 5px 5px rgb(200,200,200);
+}
+
+.miniImg {
+  width: 300px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.miniName {
+  font-size: 1em;
+}
+
+.miniPrice {
+  font-size: 0.75em;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Party Hat Store</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+    <script type='text/javascript' src="http://underscorejs.org/underscore-min.js"></script>
+    <script type='text/javascript' src="templates/miniPage.js"></script>
+    <!-- Author Jillian Hennessy -->
+    <!-- Author Yahel Nachum -->
+    <!-- Website http://jh-yn-final-cs4241.herokuapp.com/ -->
+  </head>
+<body>
+
+  <header id="top">
+  <div class="forms">
+  <form action="/list">
+    <input id="POST-search" type="text" name="search" placeholder= "Search for hats">
+    <input id="POST-submit" type="submit" value="Submit">
+  </form>
+  </div>
+  <p style= "text-align: right padding: 20px; transform:translateY(-100px);"> <a href= "index.html">Home</a>&nbsp&nbsp&nbsp&nbsp<a href= "checkout.html">My Cart</a></p>
+  </header>
+
+  <section id = "banner"> 
+  <ul id="featuredHats">
+  </ul>
+  </section>
+  <br>
+  <ul id="hats">
+  </ul>
+</body>
+
+ 
+<script>
+
+var req = new XMLHttpRequest();
+req.onreadystatechange = function() {
+if(req.readyState == XMLHttpRequest.DONE && req.status === 200){
+	var hatObjList = JSON.parse(req.responseText);
+	var hatList = document.getElementById('hats');
+	console.log('here1');
+	hatObjList.forEach(function (el, index) {
+		hatList.innerHTML += compiled({el});
+           console.log(compiled({el}));
+	});
+	console.log('here1');
+
+	var featuredHats = []
+	while(featuredHats.length < 3){
+		var bannerElement = document.getElementById("featuredHats");
+		var index = parseInt(Math.random() * hatObjList.length);
+		var el = hatObjList[index];
+		while(!isUniqueHat(el, featuredHats)){
+		index = parseInt(Math.random() * hatObjList.length);
+		el = hatObjList[index];
+		}
+		featuredHats[featuredHats.length] = el;
+		bannerElement.innerHTML += compiled({el}).replace("miniPage", "miniFeaturedPage");
+	}
+
+	if(anyIlluminati(featuredHats)){
+		bannerElement.innerHTML = "";
+		var el = getIlluminati(featuredHats);
+		bannerElement.innerHTML += compiled({el}).replace("miniPage", "miniFeaturedPage");
+		bannerElement.innerHTML += compiled({el}).replace("miniPage", "miniFeaturedPage");
+		bannerElement.innerHTML += compiled({el}).replace("miniPage", "miniFeaturedPage");
+		bannerElement.innerHTML += ""+
+							"<audio controls autoplay hidden>"+
+							"<source src=\"party_hats/illuminati/Illuminati Confirmed Sound Effect.mp3\" type=\"audio/mp3\">" +
+							"</audio>"
+	}
+}
+}
+console.log('hello');
+req.open('GET', '/list?search=&data=true');
+req.send();
+
+function isUniqueHat(el, featuredHats){
+	for(var i = 0; i < featuredHats.length; i++){
+		if(el.fullName.indexOf(featuredHats[i].fullName) != -1){
+			return false;
+		}
+	}
+	return true;
+}
+
+function anyIlluminati(featuredHats){
+	for(var i = 0; i < featuredHats.length; i++){
+		if(featuredHats[i].folderName.indexOf('illuminati') != -1){
+			return true;
+		}
+	}
+	return false;
+}
+
+function getIlluminati(featuredHats){
+	for(var i = 0; i < featuredHats.length; i++){
+		if(featuredHats[i].folderName.indexOf('illuminati') != -1){
+			return featuredHats[i];
+		}
+	}	
+}
+</script>
+</html>

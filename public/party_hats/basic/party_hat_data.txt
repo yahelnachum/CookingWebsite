@@ -1,0 +1,11 @@
+name=Basic Party Hat
+price=$19.99
+
+description:
+The Basic Party Hat features a very minimalistic design that 
+goes with any outfit and can be worn to any occasion.
+END
+
+features:
+Good for any Occasion, Minimalist style
+END

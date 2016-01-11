@@ -1,0 +1,10 @@
+name=Snow Person Party Hat
+price=$39.99
+
+description:
+Almost as festive as the Starbucks hat
+END
+
+features:
+Comes with a carrot in case that's why you like snowmen
+END

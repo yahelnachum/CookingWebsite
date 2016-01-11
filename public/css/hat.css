@@ -1,0 +1,52 @@
+body{
+	background-color: white;
+}
+
+.product{
+	width: 600px;
+	margin: auto;
+	text-align: left;
+	height: 350px;
+	overflow: auto;
+}
+
+ul{
+	width: 50%;
+	float: right;
+	padding: 50px 20px 20px 20px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+.imgLeft {
+	width: 50%;
+	float: left;
+}
+
+li {
+	padding: 5px;
+}
+
+#buy{
+	display: block;
+	margin: auto;
+	width: 400px;
+	height: 50px;
+	cursor: pointer;
+}
+
+a:link{
+	color: black;
+}
+
+a:visited{
+	color: white;
+}
+
+a:hover{
+	color: white;
+}
+
+a:active{
+	color: white;
+}
