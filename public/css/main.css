@@ -84,45 +84,47 @@ nav a#pull {
 }
 
 @media only screen and (max-width : 900px) {
-nav {
-	border-bottom: 0;
-}
-nav ul {
-display: none;
-height: auto;
-width: 100%;
-}
-nav a#pull {
-display: block;
-position: relative;
-}
-nav a#pull:after {
-content:"";
-background: url('/nav-icon.png') no-repeat;
-width: 30px;
-height: 50px;
-display: inline-block;
-position: absolute;
-right: 15px;
-top: 15px;
-}
+	nav {
+		border-bottom: 0;
+	}
+		nav ul {
+		display: none;
+		height: auto;
+		width: 100%;
+	}
+	nav a#pull {
+		display: block;
+		position: relative;
+	}
+	nav a#pull:after {
+		content:"";
+		background: url('/nav-icon.png') no-repeat;
+		width: 30px;
+		height: 50px;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+	}
 
-nav li {
-	display: block;
-	float: none;
-	border-bottom: 1px solid #576979;
-}
+	nav li {
+		display: block;
+		float: none;
+		border-bottom: 1px solid #576979;
+	}
 
-nav li:hover, nav li:active {
-	background-color: rgb(100,100,100);
-}
+	nav li:hover, nav li:active {
+		background-color: rgb(100,100,100);
+	}
 
-nav li a {
-	border-right: 0px;
-}
+	nav li a {
+		text-align: left;
+		border-right: 0px;
+		width: 100%;
+	}
 
-nav li:first-child a{
-	border-left: 0px;
-	padding: 0px 10px;
-}
+	nav li:first-child a{
+		border-left: 0px;
+		padding: 0px 10px;
+	}
 }
