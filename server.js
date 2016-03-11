@@ -6,6 +6,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 var fs = require('fs');
+var pg = require('pg')
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -30,6 +31,22 @@ app.get('/food', function(req, res) {
   htmlPage = addCommonPageElements(htmlPage);
   res.write(htmlPage);
   res.end();
+});
+
+app.get('/pg', function(req, res) {
+  var conString = "postgres://gvudijcwytegnh:GZ5frEoCExDllG1jiM3io47OHw@ec2-107-21-101-67.compute-1.amazonaws.com:5432/d9teb3pbducjlv";
+
+  pg.defaults.ssl = true;
+  pg.connect(conString, function(err, client) {
+    var query = client.query('select * from company');
+    query.on('row', function(row){
+      res.write(JSON.stringify(row));
+    });
+    query.on('end', function(){
+      console.log("DONE");
+      res.end();
+    });
+  });
 });
 
 app.listen(port, function() {
